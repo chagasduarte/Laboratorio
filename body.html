@@ -1,3 +1,12 @@
-<button type='button' class='btn btn-primary'>aqui2</button>
+<div >
+    <?php 
+        include 'Modelo\Mesa.php';
+        
+        $mesa = new Mesa();
+        $mesa->setId(1);
+        echo $mesa->getId();
+    
+    ?>
 
+</div>
 
