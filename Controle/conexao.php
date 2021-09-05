@@ -1,6 +1,6 @@
 <?php
 
-    class conexao {
+    class Conexao {
         private $host = "localhost";
         private $usuario = "root";
         private $senha = "";
@@ -23,5 +23,5 @@
     
         
     }
-
+    
 ?>
