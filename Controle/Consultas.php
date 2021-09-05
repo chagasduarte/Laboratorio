@@ -8,6 +8,6 @@
     $consulta = "select id from mesas";
     $mesa = mysqli_fetch_array($bd->query($consulta));
     
-    var_dump($mesa)
+    var_dump($mesa);
 
 ?>
