@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> Tecnophiles </title>
+        <title> Pizzaria do Luigi </title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/Pacifico.css" rel="stylesheet">
     </head>
