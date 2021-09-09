@@ -5,7 +5,7 @@
     </p>
 
 <?php
-include 'Modelo\Mesa.php';
+include 'Modelo/Mesa.php';
 $mesas = new Mesa();
 $mesa = $mesas->getMesa(1);
 ?>

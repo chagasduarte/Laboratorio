@@ -1,5 +1,5 @@
 <?php
-    include "Controle\Consultas.php";
+    include "Controle/Consultas.php";
 
     class Mesa{
         private $Id;
