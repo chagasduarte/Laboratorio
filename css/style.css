@@ -1,2 +1,37 @@
-@import "bootstrap.min.css";
-@import "Pacifico.css";
+.bg-yellow {
+	background-color: #ffe680;
+}
+
+.fg-red {
+	color: #d40000;
+}
+
+.btn-red {
+	color: white;
+    background-color: #d40000;
+    border-color: #d40000;
+}
+
+.btn-red:hover {
+	color: #ffe680;
+}
+
+.shadow-bottom {
+    box-shadow: 0px 0px 5px grey;
+}
+
+.card {
+	margin: 20px;
+}
+
+.card-img {
+	height: 300px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.card-txt {
+	height: 100px;
+	width: 100%;
+	object-fit: cover;
+}
