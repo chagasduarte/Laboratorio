@@ -1,7 +1,20 @@
 .carousel-img {
-	height: 450px;
 	width: 100%;
 	object-fit: cover;
+}
+
+.carousel-container {
+	position: relative;
+	width: 100%;
+  	padding-top: 50%;
+}
+
+.carousel-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .carousel-control-prev {
@@ -14,7 +27,7 @@
 
 .carousel-control-prev, .carousel-control-next {
 	width: 28px;
-	height: 54px;
+	height: 80px;
 	overflow: hidden;
 	opacity: 1;
 	margin: auto 0;
@@ -49,11 +62,13 @@
 }
 
 .carousel-indicators {
-	bottom: -42px;
+	bottom: -10px;
 }
 
 .carousel-caption {
 	bottom: 0px;
+	padding: 0px;
+	padding-top: 1rem;
 	left: 0;
 	background-color: #000000aa;
 	width: 100%;

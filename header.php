@@ -1,10 +1,15 @@
 <header>
     <nav class="navbar navbar-expand-lg d-block shadow-bottom p-0">
-        <div class="container-fluid bg-yellow py-1 px-3">
+        <div class="container-fluid justify-content-center justify-content-lg-between bg-yellow py-1 px-3">
+            <button class="navbar-toggler p-0 btn-red" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
             <a href="index.php">
                 <img src="Img/luigi-logo.png" height="60px"/>
             </a>
-            <button class="btn btn-red">Faça seu pedido</button>
+            <button class="btn btn-red d-none d-lg-flex">Faça seu pedido</button>
         </div>
         <div class="container-fluid bg-white navbar-light">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
