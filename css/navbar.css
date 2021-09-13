@@ -2,12 +2,18 @@
 	padding: 2px;
 }
 
+.navbar-toggler {
+	position: absolute;
+	left: 10px;
+}
+
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
 	color: #d40000;
 }
 
 .navbar-light .navbar-nav .nav-link {
 	color: #d4000088;
+	margin: auto;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {

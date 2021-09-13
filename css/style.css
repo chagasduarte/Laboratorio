@@ -25,13 +25,11 @@
 }
 
 .card-img {
-	height: 300px;
 	width: 100%;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .card-txt {
 	height: 100px;
 	width: 100%;
-	object-fit: cover;
 }
