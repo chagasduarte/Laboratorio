@@ -12,7 +12,19 @@
     border-color: #d40000;
 }
 
-.btn-red:hover {
+.btn-green {
+	color: white;
+	background-color: #639b41;
+	border-color: #639b41;
+}
+
+.btn-orange {
+	color: white;
+	background-color: #e69500;
+	border-color: #e69500;
+}
+
+.btn-red:hover, .btn-green:hover, .btn-orange:hover {
 	color: #ffe680;
 }
 

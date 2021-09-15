@@ -9,7 +9,10 @@
             <a href="index.php">
                 <img src="Img/luigi-logo.png" height="60px"/>
             </a>
-            <button class="btn btn-red d-none d-lg-flex">Faça seu pedido</button>
+            <div class="m-10">
+                <button class="btn btn-green m-10">Registrar-se</button>
+                <button class="btn btn-orange ">Fazer Login</button>
+            </div>
         </div>
         <div class="container-fluid bg-white navbar-light">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
