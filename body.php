@@ -54,7 +54,7 @@
                     <h4>Promoção:<br>
                     Combo família!</h4>
                 </div>
-                <button class="btn btn-red float-right">Peça agora!</button>
+                <button class="btn btn-green float-right">Peça agora!</button>
             </div>
             <div class="bg-yellow card card-body col-5 p-3 align-items-end">
                 <img src="Img/card1.jpg" class="card-img p-0 mb-3 col-4">
@@ -62,7 +62,7 @@
                     <h4>Promoção:<br>
                     Combo dia dos namorados!</h4>
                 </div>
-                <button class="btn btn-red float-right">Peça agora!</button>
+                <button class="btn btn-green float-right">Peça agora!</button>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
                     <h4>Promoção:<br>
                     Combo família!</h4>
                 </div>
-                <button class="btn btn-red float-right">Peça agora!</button>
+                <button class="btn btn-green float-right">Peça agora!</button>
             </div>
             <div class="bg-yellow card card-body col-5 p-3 align-items-end">
                 <img src="Img/card1.jpg" class="card-img p-0 mb-3 col-4">
@@ -83,7 +83,7 @@
                     <h4>Promoção:<br>
                     Combo dia dos namorados!</h4>
                 </div>
-                <button class="btn btn-red float-right">Peça agora!</button>
+                <button class="btn btn-green float-right">Peça agora!</button>
             </div>
         </div>
     </div>
