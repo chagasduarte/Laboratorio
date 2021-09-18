@@ -1,4 +1,3 @@
-<link href="../css/style.css" rel="stylesheet">
 
 <div class="container-fluid justify-content-center p-0 mb-5" id="pagina">
 
