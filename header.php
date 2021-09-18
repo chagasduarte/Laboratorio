@@ -9,10 +9,10 @@
             <a href="index.php">
                 <img src="Img/luigi-logo.png" height="60px"/>
             </a>
-            <div class="m-10">
-                <button class="btn btn-green m-10">Registrar-se</button>
-                <button class="btn btn-orange " onclick="window.location.href='pages/login.php'">Fazer Login</button>
-            </div>
+            <form method="post" action="pages/login.php">
+                <button type="text"name="registo" value="registro"class="btn btn-green m-10">Registrar-se</button>
+                <button type="text" name="login" value="login" class="btn btn-orange">Fazer Login</button>
+            </form>
         </div>
         <div class="container-fluid bg-white navbar-light">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">

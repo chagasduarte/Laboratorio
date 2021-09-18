@@ -16,7 +16,12 @@
 
         <?php
             include 'loginHeader.php';
-            include 'loginBody.php';
+            if (isset($_POST["login"])){
+                include 'loginBody.php';
+            }
+            else {
+                include 'cadastro.php';
+            }
             include '../footer.php';
         ?>
 
