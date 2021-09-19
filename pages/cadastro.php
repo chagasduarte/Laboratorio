@@ -11,7 +11,7 @@
             <!-- <img src="" id="icon" alt="User Icon" /> -->
         </div>
 
-        <form method="post" action="../Controle/ControleCadastro.php">
+        <form method="post" action="../Controle/ControleCliente.php">
             <input type="text" id="cpf"  name="cpf" placeholder="CPF">
             <input type="text" id="email"  name="email" placeholder="email">
             <input type="text" id="nome" name="nome" placeholder="nome">
