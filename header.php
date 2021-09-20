@@ -9,9 +9,9 @@
             <a href="index.php">
                 <img src="Img/luigi-logo.png" height="60px"/>
             </a>
-            <form method="post" action="pages/login.php">
-                <button type="text"name="registo" value="registro"class="btn btn-green m-10">Registrar-se</button>
-                <button type="text" name="login" value="login" class="btn btn-orange">Fazer Login</button>
+            <form method="post" action="index.php">
+                <button type="text" name="page" value="registro"class="btn btn-green m-10">Registrar-se</button>
+                <button type="text" name="page" value="login" class="btn btn-orange">Fazer Login</button>
             </form>
         </div>
         <div class="container-fluid bg-white navbar-light">
@@ -26,3 +26,4 @@
         </div>
     </nav>
 </header>
+<div class="container" id="body" name="body">

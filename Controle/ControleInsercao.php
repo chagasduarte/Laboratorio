@@ -1,7 +1,8 @@
 <?php
     include "Consultas.php";
+    include "ControleCliente.php";
     
-    class Insercao{
+    class InsercaoCliente{
         private $conexao;
         
         private function startConection(){
@@ -10,20 +11,21 @@
             return $this->conexao;
         }
 
-        public function InserirCliente($cpf, $nome, $email, $senha){
-            $string = "INSERT INTO `clientes`(`Id_Cliente`, `Nome`, `Data_Inscricao`, `email`, `senha`) 
-                VALUES ($cpf,'$nome', NOW() ,'$email','$senha')";
+        public function InserirCliente(Cliente $cliente){
+           
             
+            $string = "INSERT INTO `clientes`(`Id_Cliente`, `Nome`, `Data_Inscricao`, `email`, `senha`)
+                       VALUES (".$cliente->getCpf().",'".$cliente->getNome()."', NOW() ,'".$cliente->GetEmail()."','".$cliente->getSenha()."')";
+
             $inserir = new Consulta();
-            $inserir->Insercao($string);
             
+            try {
+                echo $inserir->Insercao($string);
+            } catch( Exception $e){
+                echo $e;
+            }
+
         }
     }
-
-    $insercao = new Insercao();
-    $insercao->InserirCliente(13,'chagas','chagas@gmail.com','123');
-    
-    
-
 
 ?>

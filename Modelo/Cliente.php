@@ -22,28 +22,28 @@
         }
 
         public function getNome(){
-            return $this->$nome;
+            return $this->nome;
         }
         public function setNome($nome){
             $this->nome = $nome;
         }
         
         public function getEmail(){
-            return $this->$email;
+            return $this->email;
         }
         public function setEmail($email){
             $this->email = $email;
         }
 
         public function getSenha(){
-            return $this->$senha;
+            return $this->senha;
         }
         public function setSenha($senha){
             $this->senha = $senha;
         }
 
         public function getCadastro(){
-            return $this->$cadastro;
+            return $this->cadastro;
         }
         public function setCadastro($cadastro){
             $this->cadastro = $cadastro;

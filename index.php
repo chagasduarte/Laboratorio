@@ -12,8 +12,21 @@
     <body class="d-flex flex-column h-100">
 
         <?php
+            
             include 'header.php';
-            include 'body.php';
+
+            if (isset($_POST["page"])) {
+                if ($_POST["page"] == "login"){
+                    include "pages/login.php";
+                }
+                else {
+                    include "pages/cadastro.php";
+                }
+            }
+            else {
+                include 'body.php';
+            }
+
             include 'footer.php';
         ?>
 

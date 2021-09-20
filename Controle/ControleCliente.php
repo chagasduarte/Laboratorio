@@ -1,6 +1,5 @@
 <?php
     include "../Modelo/Cliente.php";
-    include "Controleinsercao.php";
 
     class ControleCliente {
         private $cliente;

@@ -3,7 +3,7 @@
     class Conexao {
         private $host = "localhost";
         private $usuario = "root";
-        private $senha = "123";
+        private $senha = "";
         private $bd = "tecnophiles";
         private $conexao;
 
