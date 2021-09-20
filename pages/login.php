@@ -11,11 +11,11 @@
                 <!-- <img src="" id="icon" alt="User Icon" /> -->
             </div>
 
-            <form method="post" action="..">
+            <div class="container">
                 <input type="text" id="login" class="fadeIn second" name="login" placeholder="email">
-                <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Login">
-            </form>
+                <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="senha">
+                <input type="submit" class="fadeIn fourth" onclick="ValidaLogin()">
+            </div>
 
             <div id="formFooter">
                 <a class="underlineHover" href="#">Esqueceu a senha?</a>
@@ -24,3 +24,8 @@
         </div>
     </div>
 </div>
+<script>
+    function ValidaLogin(){
+        
+    }
+</script>

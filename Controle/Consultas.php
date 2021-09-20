@@ -24,7 +24,7 @@
                 $this->setConexao();
                 $con = $this->conexao->getConexao();
                 if($con->query($sql)){
-                    return 1;
+                    return "Cliente Adicionado";
                 } else {
                     return "Inseriu não, burro";
                 }
