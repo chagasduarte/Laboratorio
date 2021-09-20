@@ -18,7 +18,7 @@
                        VALUES (".$cliente->getCpf().",'".$cliente->getNome()."', NOW() ,'".$cliente->GetEmail()."','".$cliente->getSenha()."')";
 
             $inserir = new Consulta();
-            
+
             try {
                 echo $inserir->Insercao($string);
             } catch( Exception $e){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Set-2021 às 18:38
+-- Tempo de geração: 21-Set-2021 às 00:49
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.10
 
@@ -28,9 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `Id_Cliente` int(11) NOT NULL,
+  `Id_Cliente` varchar(11) NOT NULL,
   `Nome` varchar(25) NOT NULL,
-  `Data_Inscricao` date NOT NULL
+  `Data_Inscricao` date NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

@@ -1,8 +1,14 @@
 
+
+<?php
+
+    unset($_POST);
+    var_dump($_POST);
+?>
 <div class="container-fluid justify-content-center p-0 mb-5" id="pagina">
 
 <div class="justify-content-center d-flex mt-5">
-    <h1 class="text-center">Bem-vindo a pizzaria do Luigi!</h1>
+    <h3 class="text-center">Bem-vindo a pizzaria do Luigi!</h3>
 </div>
 
 <div class="wrapper fadeInDown">
