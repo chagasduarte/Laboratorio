@@ -17,7 +17,7 @@
 
             if (isset($_POST["page"])) {
                 if ($_POST["page"] == "login"){
-                    include "pages/login";
+                    include "pages/login.php";
                 }
                 else {
                     include "pages/cadastro.php";
