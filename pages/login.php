@@ -26,6 +26,22 @@
 </div>
 <script>
     function ValidaLogin(){
-        alert($("#login").val());
+        var login = $("#login").val();
+        var senha = $("#senha").val();
+
+        $.ajax({
+            type: "POST",
+            url:  "Controle/ValidaCliente.php",
+            data: {email: login, senha: senha},
+            success: function(result) {
+                if (result = 1) {
+                    alert("Login bem sucedido");
+                    $("#body").load("Visao/PaginaTeste.php");
+                }
+                else{
+                    alert("ALgo de Errado com o login");  
+                }      
+            }
+        })
     }
 </script>

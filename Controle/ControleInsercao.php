@@ -13,7 +13,6 @@
 
         public function InserirCliente(Cliente $cliente){
            
-            
             $string = "INSERT INTO `clientes`(`Id_Cliente`, `Nome`, `Data_Inscricao`, `email`, `senha`)
                        VALUES ('".$cliente->getCpf()."','".$cliente->getNome()."', NOW() ,'".$cliente->GetEmail()."','".$cliente->getSenha()."')";
 
