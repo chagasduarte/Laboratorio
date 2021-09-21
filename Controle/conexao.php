@@ -3,7 +3,7 @@
     class Conexao {
         private $host = "localhost";
         private $usuario = "root";
-        private $senha = "123";
+        private $senha = "";
         private $bd = "tecnophiles";
         private $conexao;
 
@@ -13,7 +13,7 @@
               $this->conexao = new mysqli($this->host, $this->usuario, $this->senha, $this->bd);
             }
             catch (\Exception $e){
-                return $e->getMessage;
+                return $e;
             }
         }
 

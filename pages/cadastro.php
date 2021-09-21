@@ -1,10 +1,3 @@
-
-
-<?php
-
-    unset($_POST);
-    var_dump($_POST);
-?>
 <div class="container-fluid justify-content-center p-0 mb-5" id="pagina">
 
 <div class="justify-content-center d-flex mt-5">
