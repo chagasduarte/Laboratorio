@@ -17,7 +17,7 @@
 
             if (isset($_POST["page"])) {
                 if ($_POST["page"] == "login"){
-                    var_dump($_POST);
+                    include "pages/login";
                 }
                 else {
                     include "pages/cadastro.php";

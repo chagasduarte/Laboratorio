@@ -26,6 +26,6 @@
 </div>
 <script>
     function ValidaLogin(){
-        alert("validado");
+        alert($("#login").val());
     }
 </script>
