@@ -16,7 +16,7 @@
         public function getMesa($id){
             $sql = "Select * from mesas";
             $consulta = new Consulta(); 
-            $mesa = $consulta->Retorno($sql);
+            $mesa = $consulta->Consulta($sql);
             return $mesa;
         }
 
