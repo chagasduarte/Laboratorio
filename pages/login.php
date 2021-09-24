@@ -36,7 +36,7 @@
             success: function(result) {
                 if (result = 1) {
                     alert("Login bem sucedido");
-                    $("#body").load("Visao/PaginaTeste.php");
+                    $("#body").load("Visao/AtendenteView.php");
                 }
                 else{
                     alert("ALgo de Errado com o login");  

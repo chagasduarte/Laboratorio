@@ -23,10 +23,17 @@
             try {
                 $this->setConexao();
                 $con = $this->conexao->getConexao();
-                if($con->query($sql)){
-                    return "Cliente Adicionado";
+                if($con){
+                    try{
+                        $con->query($sql);
+                        return "Cliente Adicionado com sucesso";
+                    }
+                    catch (Exception $e){
+                        return $e;
+                    }
+                    
                 } else {
-                    return "Inseriu não, burro";
+                    return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Conexao.php";
                 }
             } catch (Exception $e) {
                 return $e;
