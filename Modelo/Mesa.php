@@ -1,23 +1,45 @@
 <?php
-    include "Controle/Consultas.php";
+    include "../Controle/Consultas.php";
 
     class Mesa{
         private $Id;
-        private $Id_Garcom;
-        private $Status;
-        private $Id_Pedidos;
+        private $IdGarcom;
+        private $IdCliente;
+        private $Pedidos;
 
-        private function setMesa($id, $garcom, $status, $pedidos){
-            $this->Id = $id;
-            $this->Id_Garcom = $garcom;
-            $this->Status = $status;
-            $this->Id_Pedidos = $pedidos;
+        public function setId($Id){
+            $this->Id = $Id;
+        }        
+        public function getId(){
+            return $this->Id;
         }
-        public function getMesa($id){
-            $sql = "Select * from mesas";
-            $consulta = new Consulta(); 
-            $mesa = $consulta->Consulta($sql);
-            return $mesa;
+
+        public function setIdGarcom($IdGarcom){
+            $this->IdGarcom = $IdGarcom;
+        }        
+        public function getIdGarcom(){
+            return $this->IdGarcom;
+        }
+
+        public function setStatus($Status){
+            $this->Status = $Status;
+        }        
+        public function getStatus(){
+            return $this->Status;
+        }
+
+        public function setIdCliente($IdCliente){
+            $this->IdCliente = $IdCliente;
+        }        
+        public function getIdCliente(){
+            return $this->IdCliente;
+        }
+
+        public function setPedidos($Pedidos){
+            $this->Pedidos = $Pedidos;
+        }        
+        public function getPedidos(){
+            return $this->Pedidos;
         }
 
     }

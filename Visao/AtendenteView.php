@@ -1,19 +1,21 @@
 <?php
+
    $mesas = json_decode(file_get_contents("../Modelo/Mesa.json"));
 
 ?>
 
-<div class="container">
+<div class="container" id="Mesas">
     
     <div class="row row-cols-1 row-cols-md-4 g-1">
         <?php 
+        if ($mesas) {
             while ($mesa = current($mesas)) {
                       
         ?>
         <div class="col">
             <div class="card bg-warning">
                 
-                <div class="card-header"><h4><?=key($mesas);?></h4></div>
+                <div class="card-header"><h4><?="Mesa  ".$mesa->Mesa->Id;?></h4></div>
                 <div class="card-body">
                     <h5 class="card-title"></h5>
                     <p class="card-text">Pedidos Aqui</p>
@@ -22,8 +24,9 @@
             </div>
         </div>
         <?php
-         next($mesas); }
+            next($mesas); }}
         ?>
+
         <!-- Button trigger modal -->
         <div class="col">
             <div class="card">
@@ -63,14 +66,14 @@
     function AdicionarMesa(){
         var IdMesa = $("#IdMesa").val();
         var IdCliente = $("#IdCliente").val();
-
+        
         $.ajax({
             type: "POST",
             url: "../Controle/AdicionaMesa.php",
-            data: {IdMesa: IdMesa, IdCliente: IdCliente},
+            data: {IdMesa: IdMesa, IdCliente: IdCliente, IdAtendente: 1},
             success: function(result){
                 alert(result);
-                
+                location.reload();
             }
         });
 
