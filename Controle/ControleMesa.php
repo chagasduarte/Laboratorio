@@ -17,7 +17,7 @@
         }
         
         public function AddMesa($data){
-            $arquivo = '../Modelo/Mesa.json';
+            $arquivo = 'Modelo/Mesa.json';
             $mesas = json_decode(file_get_contents("../Modelo/Mesa.json"),true);
             $mesas[] = $data;
     
