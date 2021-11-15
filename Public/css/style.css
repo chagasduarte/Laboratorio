@@ -1,0 +1,58 @@
+.bg-yellow {
+  background-color: #ffe680;
+}
+
+.bg-dark-orange {
+  background-color: #fc6d1e;
+}
+
+.fg-red {
+  color: #d40000;
+}
+
+.btn-red {
+  color: white;
+  background-color: #d40000;
+  border-color: #d40000;
+}
+
+.btn-green {
+  color: white;
+  background-color: #639b41;
+  border-color: #639b41;
+}
+
+.btn-orange {
+  color: white;
+  background-color: #ffb31a;
+  border-color: #ffb31a;
+}
+
+.btn-red:hover,
+.btn-green:hover,
+.btn-orange:hover {
+  color: #ffe680;
+}
+
+.shadow-bottom {
+  box-shadow: 0px 0px 5px grey;
+}
+
+.card {
+  margin: 20px;
+}
+
+.card-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-txt {
+  height: 100px;
+  width: 100%;
+}
+
+.font-lobster {
+  font-family: "Lobster Two", cursive;
+  font-style: italic;
+}
