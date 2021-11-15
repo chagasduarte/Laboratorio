@@ -8,7 +8,6 @@
 	
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-		session_start();
 		include_once('../Controller/UserController.php');
 		$controller = new UserController();
 		$controller->register();
