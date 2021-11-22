@@ -9,9 +9,10 @@
     	private $endereco;
     	private $cidade;
     	private $cep;
-    	private $celular;  	
-    	
-    	public function __construct($nome, $email, $senha, $funcao, $endereco, $cidade, $cep, $celular){
+    	private $celular;
+
+    	public function __construct($id, $nome, $email, $senha, $funcao, $endereco, $cidade, $cep, $celular){
+    		$this->id = $id;
     		$this->nome = $nome;
     		$this->email = $email;
     		$this->senha = $senha;

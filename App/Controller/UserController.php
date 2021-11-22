@@ -52,7 +52,7 @@
         		$cliente_ctl = new ClienteController();
         		$cliente_ctl->insert($cliente);
         	} elseif ($_POST['papel'] == 'funcionario') {
-        		$funcionario = new Funcionario($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao'], $_POST['endereco'], $_POST['cidade'], $_POST['cep'], $_POST['celular']);
+        		$funcionario = new Funcionario(null, $_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao'], $_POST['endereco'], $_POST['cidade'], $_POST['cep'], $_POST['celular']);
         		$funcionario_ctl = new FuncionarioController();
         		$funcionario_ctl->insert($funcionario);
         	}
