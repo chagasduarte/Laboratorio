@@ -1,7 +1,7 @@
 <?php
 	
     include_once('Connection.php');
-	include_once('../Model/Cliente.php');
+	include_once('Model/Cliente.php');
     
     class ClienteController {
     	private $conn;
@@ -13,15 +13,21 @@
         
         public function insert(Cliente $cliente) {
         	$senha = password_hash($cliente->getSenha(), PASSWORD_DEFAULT);
-            $sql = "INSERT INTO clientes(cli_nome, cli_email, cli_senha)
-                    VALUES ('".$cliente->getNome()."','".$cliente->getEmail()."','".$senha."')";
-            
-            echo $sql;
+            $sql = "SELECT * FROM funcionarios
+                    WHERE fun_email = '".$cliente->getEmail()."'";
 			
             if ($this->conn) {
                 try{
-                    $this->conn->query($sql);
-                    return "Cliente adicionado com sucesso.";
+                    $res = $this->conn->query($sql);
+
+                    if ($res->num_rows == 0) {
+                        $sql = "INSERT INTO clientes(cli_nome, cli_email, cli_senha)
+                                VALUES ('".mb_strtoupper($cliente->getNome())."','".mb_strtolower($cliente->getEmail())."','".$senha."')";
+                        $this->conn->query($sql);
+                        return "Cliente adicionado com sucesso.";
+                    } else {
+                        return "Email já cadastrado.";
+                    }
                 }
                 catch (Exception $e){
                     return $e;

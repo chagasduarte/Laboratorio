@@ -1,6 +1,4 @@
 <?php
-	
-	$user = true;
 
 	include_once('Connection.php');
 	include_once('ClienteController.php');
@@ -28,11 +26,11 @@
                     	$cliente_ctl->validate($cliente);
                     } else {
                     	$sql = "SELECT * FROM funcionarios
-            	    			WHERE cli_email = '".$_POST['email']."'";
+            	    			WHERE fun_email = '".$_POST['email']."'";
                     	$res = $this->conn->query($sql);
                     	
                     	if ($res->num_rows > 0) {
-                    		$funcionario = new Cliente(null, $_POST['email'], $_POST['senha'], null, null, null, null, null);
+                    		$funcionario = new Funcionario(null, $_POST['email'], $_POST['senha'], null, null, null, null, null);
                     		$funcionario_ctl = new FuncionarioController();
                     		$funcionario_ctl->validate($funcionario);
                     	} else {
