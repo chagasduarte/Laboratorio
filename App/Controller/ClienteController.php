@@ -37,6 +37,73 @@
                 return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
             }
         }
+
+        public function show($id) {
+            $sql = "SELECT * FROM clientes WHERE cli_id = '".$id."'";
+            
+            if ($this->conn) {
+                try{
+                    $res = $this->conn->query($sql);
+                    return $res->fetch_assoc();
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
+        public function showAll() {
+            $sql = "SELECT * FROM clientes";
+            
+            if ($this->conn) {
+                try{
+                    $res = $this->conn->query($sql);
+                    return $res;
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
+        public function update(Cliente $cliente) {
+            $sql = "UPDATE clientes
+                    SET cli_nome = '".mb_strtoupper($cliente->getNome())."',
+                        cli_email = '".mb_strtolower($cliente->getEmail())."'
+                    WHERE cli_id = '".$cliente->getId()."'";
+
+            if ($this->conn) {
+                try{
+                    $this->conn->query($sql);
+                    return "Cliente atualizado com sucesso.";
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
+        public function delete($id) {
+            $sql = "DELETE FROM clientes WHERE cli_id = '".$id."'";
+
+            if ($this->conn) {
+                try{
+                    $this->conn->query($sql);
+                    return "Cliente removido com sucesso.";
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
         
         public function validate(Cliente $cliente) {
             $sql = "SELECT * FROM clientes
