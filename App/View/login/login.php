@@ -1,18 +1,19 @@
 <?php
 	
-	include('Templates/pre_def.php');
-	
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+	include('../Templates/pre_def.php');
+
+	if (isset($_SESSION['logado']) && $_SESSION['logado']) {
+		header("location: ../index.php");
+		exit;
+	}
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-		include_once('../Controller/UserController.php');
+		include_once('Controller/UserController.php');
 		$controller = new UserController();
 		$controller->login();
 
 		if (isset($_SESSION['logado']) && $_SESSION['logado']) {
-			header("location: index.php");
+			header("location: ../index.php");
 		}
 	}
 	
@@ -20,9 +21,9 @@
 
 <!DOCTYPE html>
 <html class="h-100">
-	<?php include('Templates/html-head.php') ?>
+	<?php include('View/Templates/html-head.php') ?>
 	<body class="d-flex flex-column h-100">
-		<?php include('Templates/header.php'); ?>
+		<?php include('View/Templates/header.php'); ?>
 
 		<div class="container-fluid col-lg-10 p-0">
 		
@@ -34,7 +35,7 @@
             	
             	<form action="" method="post">
             		<div class="mb-3">
-                		<input class="form-control text-center" type="text" name="email" placeholder="E-mail" required>
+                		<input class="form-control text-center text-lowercase" type="text" name="email" placeholder="E-mail" required>
                 	</div>
                 	<div class="mb-3">
                 		<input class="form-control text-center" type="password" name="senha" placeholder="Senha" required>
@@ -51,7 +52,7 @@
 		
 		</div>
 
-  		<?php include('Templates/footer.php') ?>
-		<?php include('Templates/html-script.php') ?>
+  		<?php include('View/Templates/footer.php') ?>
+		<?php include('View/Templates/html-script.php') ?>
 	</body>
 </html>
