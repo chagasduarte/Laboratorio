@@ -30,7 +30,7 @@
                     	$res = $this->conn->query($sql);
                     	
                     	if ($res->num_rows > 0) {
-                    		$funcionario = new Funcionario(null, $_POST['email'], $_POST['senha'], null, null, null, null, null);
+                    		$funcionario = new Funcionario(null, null, $_POST['email'], $_POST['senha'], null, null, null, null, null);
                     		$funcionario_ctl = new FuncionarioController();
                     		$funcionario_ctl->validate($funcionario);
                     	} else {
