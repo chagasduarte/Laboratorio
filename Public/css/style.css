@@ -10,6 +10,10 @@
   color: #d40000;
 }
 
+a.fg-red:hover {
+  color: #ef5b5b;
+}
+
 .btn-red {
   color: white;
   background-color: #d40000;
