@@ -45,9 +45,6 @@
                 	</div>
                 </form>
 				
-				<div class="mt-2 d-flex justify-content-center">
-            		<a href="#">Esqueceu a senha?</a>
-                </div>
     		</div>
 		
 		</div>
