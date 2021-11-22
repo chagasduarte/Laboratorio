@@ -33,7 +33,7 @@ CREATE TABLE mesas (
 CREATE TABLE ingredientes (
     ing_id int NOT NULL AUTO_INCREMENT,
     ing_nome varchar(50) NOT NULL,
-    ing_quantidade int NOT NULL,
+    ing_quantidade float NOT NULL,
     ing_unidade varchar(15) NOT NULL,
     PRIMARY KEY (ing_id)
 );
@@ -96,7 +96,9 @@ CREATE TABLE pedidosProIng (
 CREATE TABLE carrossel (
     itm_id int NOT NULL AUTO_INCREMENT,
     pro_id int,
-    itm_img MEDIUMBLOB,
+    itm_titulo varchar(255) NOT NULL,
+    itm_descricao text NOT NULL,
+    itm_img varchar(255) NOT NULL,
     PRIMARY KEY (itm_id),
     CONSTRAINT FK_pro_car FOREIGN KEY (pro_id)
     REFERENCES produtos(pro_id)
