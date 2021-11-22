@@ -21,7 +21,7 @@
                     $res = $this->conn->query($sql);
                     
                     if ($res->num_rows > 0) {
-                    	$cliente = new Cliente(null, $_POST['email'], $_POST['senha']);
+                    	$cliente = new Cliente(null, null, $_POST['email'], $_POST['senha']);
                     	$cliente_ctl = new ClienteController();
                     	$cliente_ctl->validate($cliente);
                     } else {
@@ -48,7 +48,7 @@
 		
 		public function register() {
         	if ($_POST['papel'] == 'cliente') {
-        		$cliente = new Cliente($_POST['nome'], $_POST['email'], $_POST['senha']);
+        		$cliente = new Cliente(null, $_POST['nome'], $_POST['email'], $_POST['senha']);
         		$cliente_ctl = new ClienteController();
         		$cliente_ctl->insert($cliente);
         	} elseif ($_POST['papel'] == 'funcionario') {

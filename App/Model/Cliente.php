@@ -6,7 +6,8 @@
     	private $email;
     	private $senha;
     	
-    	public function __construct($nome, $email, $senha){
+    	public function __construct($id, $nome, $email, $senha){
+    		$this->id = $id;
         	$this->nome = $nome;
         	$this->email = $email;
         	$this->senha = $senha;
