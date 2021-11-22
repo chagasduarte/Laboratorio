@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg d-block shadow-bottom p-0">
     	<div class="container-fluid p-0 bg-dark-orange">
-    		<a href="index.php" class="p-2">
+    		<a href="/Laboratorio/App/View/index.php" class="p-2">
             	<img src="<?php echo $img?>/luigi.png" height="80px"/>
         	</a>
         	<div class="container-fluid p-0">
@@ -12,10 +12,10 @@
                 		</svg>
             		</button>
                     <?php if (isset($_SESSION['logado']) && $_SESSION['logado']) { ?>
-                        <a class="btn btn-orange m-1" href="logout.php">Sair</a>
+                        <a class="btn btn-orange m-1" href="/Laboratorio/App/View/login/logout.php">Sair</a>
                     <?php } else { ?>
-                        <a class="btn btn-green m-1" href="registro-cli.php">Registrar-se</a>
-                        <a class="btn btn-orange m-1" href="login.php">Fazer Login</a>
+                        <a class="btn btn-green m-1" href="/Laboratorio/App/View/clientes/registro.php">Registrar-se</a>
+                        <a class="btn btn-orange m-1" href="/Laboratorio/App/View/login/login.php">Fazer Login</a>
                     <?php } ?>
         		</div>
         		<div class="container-fluid navbar-light align-self-end">
