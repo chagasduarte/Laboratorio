@@ -42,7 +42,13 @@
 	        	    	</div>
 	        	    	<div class="form-group col-2">
 	        	      		<label>Unidade</label>
-	        	      		<input type="text" class="form-control text-uppercase" name="unidade">
+	        	      		<select name="unidade" class="form-select" required>
+	        	      		  <option selected>Selecione</option>
+	        	      		  <option value="kg">Kilogramas (kg)</option>
+	        	      		  <option value="g">Gramas (g)</option>
+	        	      		  <option value="l">Litros (l)</option>
+	        	      		  <option value="und">Unidades</option>
+	        	      		</select>
 	        	    	</div>
         	    	</div>
         	    	<div class="d-flex justify-content-end">
