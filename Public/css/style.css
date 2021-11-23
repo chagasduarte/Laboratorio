@@ -60,3 +60,9 @@ a.fg-red:hover {
   font-family: "Lobster Two", cursive;
   font-style: italic;
 }
+
+select[readonly] {
+  background: #eee; /*Simular campo inativo - Sugestão @GabrielRodrigues*/
+  pointer-events: none;
+  touch-action: none;
+}
