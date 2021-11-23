@@ -37,6 +37,78 @@
                 return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
             }
         }
+
+        public function show($id) {
+            $sql = "SELECT * FROM funcionarios WHERE fun_id = '".$id."'";
+            
+            if ($this->conn) {
+                try{
+                    $res = $this->conn->query($sql);
+                    return $res->fetch_assoc();
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
+        public function showAll() {
+            $sql = "SELECT * FROM funcionarios";
+            
+            if ($this->conn) {
+                try{
+                    $res = $this->conn->query($sql);
+                    return $res;
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
+        public function update(Funcionario $funcionario) {
+            $sql = "UPDATE funcionarios
+                    SET fun_nome = '".mb_strtoupper($funcionario->getNome())."',
+                        fun_email = '".mb_strtolower($funcionario->getEmail())."',
+                        fun_funcao = '".mb_strtoupper($funcionario->getFuncao())."',
+                        fun_endereco = '".mb_strtoupper($funcionario->getEndereco())."',
+                        fun_cidade = '".mb_strtoupper($funcionario->getCidade())."',
+                        fun_cep = '".$funcionario->getCep()."',
+                        fun_celular = '".$funcionario->getCelular()."'
+                    WHERE fun_id = '".$funcionario->getId()."'";
+
+            if ($this->conn) {
+                try{
+                    $this->conn->query($sql);
+                    return "Funcionario atualizado com sucesso.";
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
+        public function delete($id) {
+            $sql = "DELETE FROM funcionarios WHERE fun_id = '".$id."'";
+
+            if ($this->conn) {
+                try{
+                    $this->conn->query($sql);
+                    return "Funcionario removido com sucesso.";
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
         
         public function validate(Funcionario $funcionario) {
             $sql = "SELECT * FROM funcionarios
