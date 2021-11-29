@@ -7,6 +7,7 @@
 	$css = '../../../Public/css';
 	$js = '../../../Public/js';
 	$img = '../../../Public/img';
+	$uploads = '../../../Public/Uploads';
 	$titulo = 'Pizzaria do Luigi';
 	
 	chdir('/var/www/html/Laboratorio/App');

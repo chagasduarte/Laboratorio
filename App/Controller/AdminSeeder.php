@@ -5,6 +5,7 @@ Cadastro de Administrador<br>
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
+	chdir('/var/www/html/Laboratorio/App');
 
 	include_once('Connection.php');
 	include_once('FuncionarioController.php');
@@ -18,7 +19,7 @@ Cadastro de Administrador<br>
 	$cep = '52222000';
 	$celular = '88999526345';
 
-	$funcionario = new Funcionario($nome, $email, $senha, $funcao, $endereco, $cidade, $cep, $celular);
+	$funcionario = new Funcionario(null, $nome, $email, $senha, $funcao, $endereco, $cidade, $cep, $celular);
 	$funcionario_ctl = new FuncionarioController();
 	echo $funcionario_ctl->insert($funcionario);
 

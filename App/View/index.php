@@ -21,9 +21,11 @@
 		<?php
 
 			if (isset($_SESSION['logado']) && $_SESSION['logado']) {
-				if ($_SESSION['papel'] == 'cliente') {
+				$_SESSION['papel'];
+
+				if ($_SESSION['papel'] == 'CLIENTE') {
 					include('index/cliente.php');
-				} elseif ($_SESSION['papel'] == 'admin') {
+				} elseif ($_SESSION['papel'] == 'ADMIN') {
 					include('index/admin.php');
 				} else {
 					include('index/funcionario.php');
