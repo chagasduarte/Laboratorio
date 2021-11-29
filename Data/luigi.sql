@@ -40,11 +40,9 @@ CREATE TABLE ingredientes (
 
 CREATE TABLE produtos (
     pro_id int NOT NULL AUTO_INCREMENT,
-    prod_img MEDIUMBLOB,
-    pro_descricao varchar(50) NOT NULL,
-    pro_tipo boolean NOT NULL,
+    pro_nome varchar(50) NOT NULL,
+    pro_imagem varchar(255) NOT NULL,
     pro_preco float NOT NULL,
-    pro_tamanho int NOT NULL,
     pro_disponivel boolean NOT NULL,
     PRIMARY KEY (pro_id)
 );
