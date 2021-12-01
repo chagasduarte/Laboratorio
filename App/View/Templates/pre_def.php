@@ -10,5 +10,6 @@
 	$uploads = '../../../Public/Uploads';
 	$titulo = 'Pizzaria do Luigi';
 	
-	chdir('/var/www/html/Laboratorio/App');
+	$dir = getcwd();
+	chdir(dirname(dirname($dir)));
 ?>
