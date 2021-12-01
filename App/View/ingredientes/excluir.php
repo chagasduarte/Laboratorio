@@ -2,7 +2,7 @@
 
 <?php
 
-	if ($_SESSION['papel'] != 'admin') {
+	if ($_SESSION['papel'] != 'ADMIN') {
 		header("location: ../index.php");
 		exit;
 	}
