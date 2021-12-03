@@ -47,6 +47,7 @@
 	        	      		  <option value="kg">Kilogramas (kg)</option>
 	        	      		  <option value="g">Gramas (g)</option>
 	        	      		  <option value="l">Litros (l)</option>
+	        	      		  <option value="ml">Mililitros (ml)</option>
 	        	      		  <option value="und">Unidades</option>
 	        	      		</select>
 	        	    	</div>

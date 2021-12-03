@@ -48,14 +48,15 @@ CREATE TABLE produtos (
 );
 
 CREATE TABLE produtosIngredientes (
-    proIng_id int NOT NULL AUTO_INCREMENT,
     pro_id int,
     ing_id int,
-    PRIMARY KEY (proIng_id),
+    proIng_quantidade float NOT NULL,
+    PRIMARY KEY (pro_id, ing_id),
     CONSTRAINT FK_pro_proIng FOREIGN KEY (pro_id)
-    REFERENCES produtos(pro_id),
+        REFERENCES produtos(pro_id)
+        ON DELETE CASCADE,
     CONSTRAINT FK_ing_proIng FOREIGN KEY (ing_id)
-    REFERENCES ingredientes(ing_id)
+        REFERENCES ingredientes(ing_id)
 );
 
 CREATE TABLE pedidos (
@@ -79,16 +80,15 @@ CREATE TABLE pedidos (
     REFERENCES mesas(mes_id)
 );
 
-CREATE TABLE pedidosProIng (
-    pedProIng_id int NOT NULL AUTO_INCREMENT,
-    proIng_id int,
+CREATE TABLE pedidosProdutos (
     ped_id int,
-    pedProIng_quantidade int,
-    PRIMARY KEY (pedProIng_id),
-    CONSTRAINT FK_proIng_pedProIng FOREIGN KEY (proIng_id)
-    REFERENCES produtosIngredientes(proIng_id),
-    CONSTRAINT FK_ped_pedProIng FOREIGN KEY (ped_id)
-    REFERENCES pedidos(ped_id)
+    pro_id int,
+    pedPro_quantidade int,
+    CONSTRAINT FK_ped_pedPro FOREIGN KEY (ped_id)
+    REFERENCES pedidos(ped_id),
+    CONSTRAINT FK_pro_pedPro FOREIGN KEY (pro_id)
+    REFERENCES produtos(pro_id),
+    PRIMARY KEY (ped_id, pro_id)
 );
 
 CREATE TABLE carrossel (
