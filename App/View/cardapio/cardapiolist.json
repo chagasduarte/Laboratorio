@@ -1,0 +1,8 @@
+{
+    "prod": {
+        "nome":"Pizza de Calabresa",
+        "preco":"52.00",
+        "igredientes":["queijo","calabresa","pimentao"],
+        "img":""
+    }
+}
