@@ -21,10 +21,10 @@
         		<div class="container-fluid navbar-light align-self-end">
             		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 		<div class="navbar-nav">
-                    		<a class="nav-link active" aria-current="page" href="#">Cardápio</a>
-                    		<a class="nav-link" href="#">Minha Conta</a>
-                    		<a class="nav-link" href="#">Fale conosco</a>
-                    		<a class="nav-link" href="#">Sobre nós</a>
+                    		<a class="nav-link active" aria-current="page" href="cardapio\cardapio.php" >Cardápio</a>
+                    		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#minhaconta" >Minha Conta</a>
+                    		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#faleconosco">Fale conosco</a>
+                    		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#sobrenos">Sobre nós</a>
                 		</div>
             		</div>
           		</div>
