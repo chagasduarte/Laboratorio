@@ -68,8 +68,8 @@
 	        	      		<label>Função</label>
 	        	      		<select name="funcao" class="form-select" required>
 	        	      		  <option selected>Selecione</option>
-	        	      		  <option <?php if ($funcionario['fun_funcao'] == 'gerente')  { ?>selected="true" <?php }; ?> value="gerente">Gerente</option>
-	        	      		  <option <?php if ($funcionario['fun_funcao'] == 'atendente')  { ?>selected="true" <?php }; ?> value="atendente">Atendente</option>
+	        	      		  <option <?php if ($funcionario['fun_funcao'] == 'GERENTE')  { ?>selected="true" <?php }; ?> value="gerente">Gerente</option>
+	        	      		  <option <?php if ($funcionario['fun_funcao'] == 'ATENDENTE')  { ?>selected="true" <?php }; ?> value="atendente">Atendente</option>
 	        	      		</select>
 	        	    	</div>
 	        	    	<div class="form-group col-3">
@@ -83,7 +83,7 @@
         	    	</div>
         	    	<div class="d-flex justify-content-end">
         	    		<a type="button" class="mx-1 btn btn-secondary" href="listar.php">Cancelar</a>
-        	    		<?php if ($funcionario['fun_funcao'] != 'admin') { ?>
+        	    		<?php if ($funcionario['fun_funcao'] != 'ADMIN') { ?>
 	        	      		<button type="submit" name="atualizar" class="btn btn-success">Salvar</button>
 	        	      	<?php } ?>
         	    	</div>
@@ -94,7 +94,7 @@
 
   		<?php include('View/Templates/footer.php') ?>
 		<?php include('View/Templates/html-script.php') ?>
-		<?php if ($funcionario['fun_funcao'] == 'admin') { ?>
+		<?php if ($funcionario['fun_funcao'] == 'ADMIN') { ?>
 			<script type="text/javascript">
 				$('#editar-form input').attr('readonly', 'readonly');
 				$('#editar-form select').attr('readonly', 'readonly');

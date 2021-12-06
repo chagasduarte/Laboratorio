@@ -33,7 +33,7 @@
 				<div class="d-flex justify-content-center p-3">
 			        <h4>Excluir Funcionário</h4>
 			    </div>
-			    <?php if ($funcionario['fun_funcao'] == 'admin') { ?>
+			    <?php if ($funcionario['fun_funcao'] == 'ADMIN') { ?>
 			    	Não é possível excluir o administrador <?php echo $funcionario['fun_id'] ?> - <?php echo $funcionario['fun_nome'] ?>.
 			    <?php } else { ?>
 					Tem certeza que deseja excluir o funcionário <?php echo $funcionario['fun_id'] ?> - <?php echo $funcionario['fun_nome'] ?>?
@@ -41,7 +41,7 @@
 
 				<div class="justify-content-end d-flex mt-4">
 					<a type="button" class="btn btn-secondary mx-1" href="listar.php">Cancelar</a>
-					<?php if ($funcionario['fun_funcao'] != 'admin') { ?>
+					<?php if ($funcionario['fun_funcao'] != 'ADMIN') { ?>
 						<form action="" method="post">
 							<button type="submit" name="excluir" value="<?php echo $funcionario['fun_id'] ?>" class="btn btn-danger">Excluir</button>
 						</form>
