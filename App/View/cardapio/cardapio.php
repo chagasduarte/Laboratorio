@@ -170,14 +170,6 @@
 					"total": $("[name='pro_total']").val()
 				};
 
-				i = produtos.length;
-
-				form.append('<input type="text" name="produtos['+i+'][id]" value="'+produto.id+'" />');
-    			form.append('<input type="text" name="produtos['+i+'][nome]" value="'+produto.nome+'" />');
-    			form.append('<input type="number" step="0.01" name="produtos['+i+'][preco]" value="'+BRLtoFLOAT(produto.preco)+'" />');
-    			form.append('<input type="text" name="produtos['+i+'][qtd]" value="'+produto.qtd+'" />');
-    			form.append('<input type="number"  step="0.01" name="produtos['+i+'][total]" value="'+BRLtoFLOAT(produto.total)+'" />');
-
 				total += BRLtoFLOAT(produto.total);
 
 				produtos.push(produto);
@@ -292,7 +284,19 @@
 			}*/
 
 			function finalizarPedido() {
-	    		form.submit();
+				var produto;
+
+				for (var i = 0; i < produtos.length; i++) {
+					produto = produtos[i];
+
+					form.append('<input type="text" name="produtos['+i+'][id]" value="'+produto.id+'" />');
+	    			form.append('<input type="text" name="produtos['+i+'][nome]" value="'+produto.nome+'" />');
+	    			form.append('<input type="number" step="0.01" name="produtos['+i+'][preco]" value="'+BRLtoFLOAT(produto.preco)+'" />');
+	    			form.append('<input type="text" name="produtos['+i+'][qtd]" value="'+produto.qtd+'" />');
+	    			form.append('<input type="number"  step="0.01" name="produtos['+i+'][total]" value="'+BRLtoFLOAT(produto.total)+'" />');
+				}
+
+				form.submit();
 			}
 		</script>
 	</body>
