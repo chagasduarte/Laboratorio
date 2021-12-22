@@ -22,7 +22,7 @@
 
                     if ($res->num_rows == 0) {
                         $sql = "INSERT INTO funcionarios(fun_nome, fun_email, fun_senha, fun_funcao, fun_endereco, fun_cidade, fun_cep, fun_celular)
-                                VALUES ('".mb_strtoupper($funcionario->getNome())."','".$funcionario->getEmail()."','".$senha."','".mb_strtoupper($funcionario->getFuncao())."','".mb_strtoupper($funcionario->getEndereco())."','".mb_strtoupper($funcionario->getCidade())."','".$funcionario->getCep()."','".$funcionario->getCelular()."')";
+                                VALUES ('".mb_strtoupper($funcionario->getNome())."','".$funcionario->getEmail()."','".$senha."','".mb_strtoupper($funcionario->getFuncao())."','".mb_strtoupper($funcionario->getEndereco())."','".mb_strtoupper($funcionario->getCidade())."','".preg_replace('/\D/', '', $funcionario->getCep())."','".preg_replace('/\D/', '', $funcionario->getCelular())."')";
                         $this->conn->query($sql);
                         return "Funcionário adicionado com sucesso.";
                     } else {
@@ -122,6 +122,7 @@
                     if ($res->num_rows > 0 && password_verify($funcionario->getSenha(), $row['fun_senha'])) {
 						$_SESSION['papel'] = $row['fun_funcao'];
 						$_SESSION['logado'] = true;
+                        $_SESSION['id'] = $row['fun_id'];
 						$_SESSION['usuario'] = $funcionario->getEmail();
 						$_SESSION['senha'] = $funcionario->getSenha();
                     } else {

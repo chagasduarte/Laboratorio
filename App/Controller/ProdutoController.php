@@ -69,6 +69,22 @@
             }
         }
 
+        public function deleteIngrediente($pro_id, $ing_id) {
+            $sql = "DELETE FROM produtosIngredientes WHERE pro_id = '".$pro_id."' and ing_id = '".$ing_id."'";
+
+            if ($this->conn) {
+                try{
+                    $this->conn->query($sql);
+                    return "Ingrediente removido com sucesso!";
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
         public function showIngredientes($id) {
             $sql = "SELECT * FROM produtosIngredientes
                     INNER JOIN ingredientes

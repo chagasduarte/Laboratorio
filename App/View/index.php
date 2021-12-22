@@ -30,10 +30,11 @@
 					include('index/cliente.php');
 				} elseif ($_SESSION['papel'] == 'ADMIN') {
 					include('index/admin.php');
+				} elseif ($_SESSION['papel'] == 'ATENDENTE') {
+					include('index/atendente.php');
 				} else {
-					include('index/funcionario.php');
+					include('index/gerente.php');
 				}
-
 			} else {
 				include('index/cliente.php');
 			}

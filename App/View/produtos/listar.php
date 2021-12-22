@@ -20,7 +20,7 @@
 		<?php include('View/Templates/header.php') ?>
 		<div class="container-fluid col-lg-10 p-0">
 
-			<div class="col-10 container p-3 border rounded my-5">
+			<div class="col-8 container p-3 border rounded my-5">
 				<div class="d-flex justify-content-center p-3">
 			        <h4>Produtos</h4>
 			    </div>
@@ -32,7 +32,6 @@
 					        	<th scope="col">CÓDIGO</th>
 					        	<th scope="col">NOME</th>
 					        	<th scope="col">PREÇO</th>
-					        	<th scope="col">DISPONÍVEL</th>
 					        	<th scope="col">AÇÃO</th>
 					        </tr>
 					    </thead>
@@ -44,8 +43,7 @@
 					            <tr class="text-left">
 					                <td scope="row"><?php echo $produto['pro_id'] ?></td>
 					                <td scope="row"><?php echo $produto['pro_nome'] ?></td>
-					                <td scope="row"><?php echo $produto['pro_preco'] ?></td>
-					                <td scope="row"><?php echo $produto['pro_disponivel'] ?></td>
+					                <td scope="row">R$ <?php echo number_format($produto["pro_preco"], 2, ',', '.') ?></td>
 					                <td class="text-center">
 					                	<a href="editar.php?id=<?php echo $produto['pro_id'] ?>" class="btn btn-success py-0 px-1">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">

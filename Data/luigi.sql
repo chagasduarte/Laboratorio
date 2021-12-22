@@ -22,14 +22,6 @@ CREATE TABLE funcionarios (
     PRIMARY KEY (fun_id)
 );
 
-CREATE TABLE mesas (
-    mes_id int NOT NULL AUTO_INCREMENT,
-    fun_id int,
-    PRIMARY KEY (mes_id),
-    CONSTRAINT FK_fun_mes FOREIGN KEY (fun_id)
-    REFERENCES funcionarios(fun_id)
-);
-
 CREATE TABLE ingredientes (
     ing_id int NOT NULL AUTO_INCREMENT,
     ing_nome varchar(50) NOT NULL,
@@ -61,23 +53,22 @@ CREATE TABLE produtosIngredientes (
 
 CREATE TABLE pedidos (
     ped_id int NOT NULL AUTO_INCREMENT,
-    cli_id int NOT NULL,
+    cli_id int,
     fun_id int,
     mes_id int,
     ped_tipo boolean NOT NULL,
+    ped_receptor varchar(50),
     ped_data datetime NOT NULL,
     ped_endereco varchar(50),
     ped_cidade varchar(40),
     ped_cep varchar(8),
     ped_celular varchar(11),
-    status varchar(50) NOT NULL,
+    status int NOT NULL,
     PRIMARY KEY (ped_id),
     CONSTRAINT FK_cli_ped FOREIGN KEY (cli_id)
     REFERENCES clientes(cli_id),
     CONSTRAINT FK_fun_ped FOREIGN KEY (fun_id)
-    REFERENCES funcionarios(fun_id),
-    CONSTRAINT FK_mes_ped FOREIGN KEY (mes_id)
-    REFERENCES mesas(mes_id)
+    REFERENCES funcionarios(fun_id)
 );
 
 CREATE TABLE pedidosProdutos (

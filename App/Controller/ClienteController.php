@@ -115,8 +115,9 @@
                     $row = $res->fetch_assoc();
                     
                     if ($res->num_rows > 0 && password_verify($cliente->getSenha(), $row['cli_senha'])) {
-						$_SESSION['papel'] = 'cliente';
+						$_SESSION['papel'] = 'CLIENTE';
 						$_SESSION['logado'] = true;
+                        $_SESSION['id'] = $row['cli_id'];
 						$_SESSION['usuario'] = $cliente->getEmail();
 						$_SESSION['senha'] = $cliente->getSenha();
                     } else {

@@ -56,21 +56,21 @@
 	        	    	</div>
 	        	    	<div class="form-group col-3">
 	        	      		<label>CEP</label>
-	        	      		<input type="number" class="form-control text-uppercase" name="cep" required>
+	        	      		<input type="text" class="form-control text-uppercase cep" name="cep" required>
 	        	    	</div>
         	    	</div>
         	    	<div class="row mb-3">
 	        	    	<div class="form-group col-3">
 	        	      		<label>Função</label>
 	        	      		<select name="funcao" class="form-select" required>
-	        	      		  <option selected>Selecione</option>
+	        	      		  <option value="" selected>Selecione</option>
 	        	      		  <option value="gerente">Gerente</option>
 	        	      		  <option value="atendente">Atendente</option>
 	        	      		</select>
 	        	    	</div>
 	        	    	<div class="form-group col-3">
 	        	      		<label>Celular</label>
-	        	      		<input type="number" class="form-control" name="celular" required>
+	        	      		<input type="text" class="form-control celular" name="celular" required>
 	        	    	</div>
 	        	    	<div class="form-group col-3">
 	        	      		<label>Senha</label>
