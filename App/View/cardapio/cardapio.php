@@ -5,10 +5,10 @@
 	$controller = new ProdutoController();
 	$produtos = $controller->showCardapio();
 
-	if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
-		header("location: ../index.php");
-		exit;
-	}
+	// if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
+	// 	header("location: ../index.php");
+	// 	exit;
+	// }
 	
 ?>
 

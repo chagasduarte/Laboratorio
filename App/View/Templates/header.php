@@ -15,15 +15,15 @@
                         <span class="m-1 text-white btn bg-dark-orange" style="pointer-events: none;"><?= ($_SESSION['papel'] == 'CLIENTE')? '': $_SESSION['papel'] ?></span>
                         <a class="btn btn-orange m-1" href="/Laboratorio/App/View/login/logout.php">Sair</a>
                     <?php } else { ?>
-                        <a class="btn btn-green m-1" href="/Laboratorio/App/View/clientes/registro.php">Registrar-se</a>
-                        <a class="btn btn-orange m-1" href="/Laboratorio/App/View/login/login.php">Fazer Login</a>
+                        <a class="btn btn-green m-1" href="/Laboratorio/App/View/clientes/registro.php" id="registrar">Registrar-se</a>
+                        <a class="btn btn-orange m-1" href="/Laboratorio/App/View/login/login.php" id="login" >Fazer Login</a>
                     <?php } ?>
         		</div>
         		<div class="container-fluid navbar-light align-self-end">
             		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 		<div class="navbar-nav">
                     		<a class="nav-link active" aria-current="page" href="/Laboratorio/App/View/cardapio/cardapio.php" >Cardápio</a>
-                    		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#minhaconta" >Minha Conta</a>
+                    		<a class="nav-link active" aria-current="page" href="/Laboratorio/App/View/minhaconta/minhaconta.php" >Minha Conta</a>
                     		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#faleconosco">Fale conosco</a>
                     		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#sobrenos">Sobre nós</a>
                 		</div>
