@@ -4,10 +4,10 @@
 	include_once('Controller/PedidoController.php');
 	
 
-	// if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
-	//     header("location: ../index.php");
-	//  	exit;
-	// }
+	if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
+	    header("location: ../index.php");
+	 	exit;
+	}
 	
 ?>
 
@@ -41,14 +41,14 @@
                             <tr>
                                 <th>Qtd.</th>
                                 <th>Produto</th>
-                                <th>Produto</th>
+                                <th>Preço</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                        if ($pedidos->num_rows > 0) {
-						    while ($pedido = $pedidos->fetch_assoc()) {
-                        ?>
+                                if ($pedidos->num_rows > 0) {
+                                    while ($pedido = $pedidos->fetch_assoc()) {
+                            ?>
                                 <th>
                                   <?=$pedido['cli_id']?>
                                 </th>
@@ -62,7 +62,7 @@
                             </div>
                         </tbody>
                     </table>
-                    </div>
+                   
                 </div>
                 <div class="table table-bordered shadow p-3 mb-5 bg-white rounded">                
                     <div class="conteiner btn btn-success ">
@@ -71,13 +71,10 @@
              
                     <table class="table table-bordered">
                         <thead>
-                            <th> <?=date("d/m/y");?></th>
-                            <th> Pedido n°:         </th>
-                            <th> Total:             </th>
                             <tr>
                                 <th>Qtd.</th>
                                 <th>Produto</th>
-                                <th>Produto</th>
+                                <th>Preço</th>
                             </tr>
                         </thead>
                         <tbody>
