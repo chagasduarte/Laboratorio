@@ -64,6 +64,7 @@ CREATE TABLE pedidos (
     ped_cep varchar(8),
     ped_celular varchar(11),
     status int NOT NULL,
+    ped_total float NOT NULL,
     PRIMARY KEY (ped_id),
     CONSTRAINT FK_cli_ped FOREIGN KEY (cli_id)
     REFERENCES clientes(cli_id),
@@ -76,7 +77,8 @@ CREATE TABLE pedidosProdutos (
     pro_id int,
     pedPro_quantidade int,
     CONSTRAINT FK_ped_pedPro FOREIGN KEY (ped_id)
-    REFERENCES pedidos(ped_id),
+    REFERENCES pedidos(ped_id)
+        ON DELETE CASCADE,
     CONSTRAINT FK_pro_pedPro FOREIGN KEY (pro_id)
     REFERENCES produtos(pro_id),
     PRIMARY KEY (ped_id, pro_id)
@@ -84,11 +86,8 @@ CREATE TABLE pedidosProdutos (
 
 CREATE TABLE carrossel (
     itm_id int NOT NULL AUTO_INCREMENT,
-    pro_id int,
     itm_titulo varchar(255) NOT NULL,
     itm_descricao text NOT NULL,
     itm_img varchar(255) NOT NULL,
-    PRIMARY KEY (itm_id),
-    CONSTRAINT FK_pro_car FOREIGN KEY (pro_id)
-    REFERENCES produtos(pro_id)
+    PRIMARY KEY (itm_id)
 );

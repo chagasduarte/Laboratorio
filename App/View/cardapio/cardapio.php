@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+	$page = 'cardapio';
+
 	include('../Templates/pre_def.php');
 	
 	include_once('Controller/ProdutoController.php');
@@ -6,7 +9,7 @@
 	$produtos = $controller->showCardapio();
 
 	if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
-		header("location: ../index.php");
+		header("location: ../login/login.php");
 		exit;
 	}
 	
@@ -150,7 +153,7 @@
 			</div>
 
 			<div class="d-none">
-				<form id="prod_form" action="../novo_pedido.php" method="post">
+				<form id="prod_form" action="../pedidos/adicionar.php" method="post">
 				</form>
 			</div>
 
@@ -273,15 +276,6 @@
     					return;
     				}
 			}
-
-			/*
-			function finalizarPedido() {
-				var xmlhttp = new XMLHttpRequest();
-				var url = "../novo_pedido.php";
-				xmlhttp.open("POST", url);
-				xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-				xmlhttp.send(JSON.stringify(produtos));
-			}*/
 
 			function finalizarPedido() {
 				var produto;
