@@ -1,14 +1,17 @@
-<?php 
+<?php
+
+	$page = 'cardapio';
+
 	include('../Templates/pre_def.php');
 	
 	include_once('Controller/ProdutoController.php');
 	$controller = new ProdutoController();
 	$produtos = $controller->showCardapio();
 
-	// if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
-	// 	header("location: ../index.php");
-	// 	exit;
-	// }
+	if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
+		header("location: ../login/login.php");
+		exit;
+	}
 	
 ?>
 
@@ -150,7 +153,7 @@
 			</div>
 
 			<div class="d-none">
-				<form id="prod_form" action="../novo_pedido.php" method="post">
+				<form id="prod_form" action="../pedidos/adicionar.php" method="post">
 				</form>
 			</div>
 
@@ -169,14 +172,6 @@
 					"qtd": $("[name='pro_qtd']").val(),
 					"total": $("[name='pro_total']").val()
 				};
-
-				i = produtos.length;
-
-				form.append('<input type="text" name="produtos['+i+'][id]" value="'+produto.id+'" />');
-    			form.append('<input type="text" name="produtos['+i+'][nome]" value="'+produto.nome+'" />');
-    			form.append('<input type="number" step="0.01" name="produtos['+i+'][preco]" value="'+BRLtoFLOAT(produto.preco)+'" />');
-    			form.append('<input type="text" name="produtos['+i+'][qtd]" value="'+produto.qtd+'" />');
-    			form.append('<input type="number"  step="0.01" name="produtos['+i+'][total]" value="'+BRLtoFLOAT(produto.total)+'" />');
 
 				total += BRLtoFLOAT(produto.total);
 
@@ -282,17 +277,20 @@
     				}
 			}
 
-			/*
 			function finalizarPedido() {
-				var xmlhttp = new XMLHttpRequest();
-				var url = "../novo_pedido.php";
-				xmlhttp.open("POST", url);
-				xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-				xmlhttp.send(JSON.stringify(produtos));
-			}*/
+				var produto;
 
-			function finalizarPedido() {
-	    		form.submit();
+				for (var i = 0; i < produtos.length; i++) {
+					produto = produtos[i];
+
+					form.append('<input type="text" name="produtos['+i+'][id]" value="'+produto.id+'" />');
+	    			form.append('<input type="text" name="produtos['+i+'][nome]" value="'+produto.nome+'" />');
+	    			form.append('<input type="number" step="0.01" name="produtos['+i+'][preco]" value="'+BRLtoFLOAT(produto.preco)+'" />');
+	    			form.append('<input type="text" name="produtos['+i+'][qtd]" value="'+produto.qtd+'" />');
+	    			form.append('<input type="number"  step="0.01" name="produtos['+i+'][total]" value="'+BRLtoFLOAT(produto.total)+'" />');
+				}
+
+				form.submit();
 			}
 		</script>
 	</body>

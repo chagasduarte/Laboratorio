@@ -1,14 +1,13 @@
 <?php
     
-	class CarrosselItem {
+	class Item {
 		private $id;
-    	private $produto;
     	private $titulo;
     	private $descricao;
     	private $imagem;
     	
-    	public function __construct($produto, $titulo, $descricao, $imagem){
-        	$this->produto = $produto;
+    	public function __construct($id, $titulo, $descricao, $imagem){
+    		$this->id = $id;
         	$this->titulo = $titulo;
         	$this->descricao = $descricao;
         	$this->imagem = $imagem;
@@ -20,14 +19,6 @@
     	
     	public function setId($id){
         	$this->id = $id;
-    	}
-    	
-    	public function getProduto(){
-        	return $this->produto;
-    	}
-    	
-    	public function setProduto($produto){
-        	$this->produto = $produto;
     	}
 
     	public function getTitulo(){

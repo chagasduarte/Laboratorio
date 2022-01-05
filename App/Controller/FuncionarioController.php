@@ -54,6 +54,21 @@
             }
         }
 
+        public function showByFuncao($funcao) {
+            $sql = "SELECT * FROM funcionarios WHERE fun_funcao = '".$funcao."'";
+            
+            if ($this->conn) {
+                try{
+                    return $this->conn->query($sql);
+                }
+                catch (Exception $e){
+                    return $e;
+                }
+            } else {
+                return "A conexão com o banco falhou, verifique as variáveis de conexão no arquivo Connection.php.";
+            }
+        }
+
         public function showAll() {
             $sql = "SELECT * FROM funcionarios";
             
