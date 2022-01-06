@@ -25,9 +25,6 @@
 
                     		<a class="nav-link <?= (isset($page) && $page == 'cardapio')? 'active': '' ?>" href="/Laboratorio/App/View/cardapio/cardapio.php" >Cardápio</a>
                     		<a class="nav-link <?= (isset($page) && $page == 'minha_conta')? 'active': '' ?>" href="/Laboratorio/App/View/index/minha_conta.php">Minha Conta</a>
-
-                    		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#faleconosco">Fale conosco</a>
-                    		<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#sobrenos">Sobre nós</a>
                 		</div>
             		</div>
           		</div>

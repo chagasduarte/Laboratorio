@@ -2,7 +2,7 @@
 
 <?php
 
-	if ($_SESSION['papel'] != 'ADMIN') {
+	if ($_SESSION['papel'] != 'ADMIN' && $_SESSION['papel'] != 'GERENTE') {
 		header("location: ../index.php");
 		exit;
 	}
@@ -64,7 +64,9 @@
 	        	      		<label>Função</label>
 	        	      		<select name="funcao" class="form-select" required>
 	        	      		  <option value="" selected>Selecione</option>
-	        	      		  <option value="gerente">Gerente</option>
+	        	      		  <?php if ($_SESSION['papel'] != 'ADMIN') { ?>
+		        	      		  <option value="gerente">Gerente</option>
+		        	      	  <?php } ?>
 	        	      		  <option value="atendente">Atendente</option>
 	        	      		</select>
 	        	    	</div>

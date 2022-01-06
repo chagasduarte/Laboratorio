@@ -2,7 +2,7 @@
 
 <?php
 
-	if ($_SESSION['papel'] != 'ADMIN') {
+	if ($_SESSION['papel'] != 'ADMIN' && $_SESSION['papel'] != 'GERENTE') {
 		header("location: ../index.php");
 		exit;
 	}
@@ -66,19 +66,17 @@
         	    	<div class="row mb-3">
 	        	    	<div class="form-group col-3">
 	        	      		<label>Função</label>
-	        	      		<select name="funcao" class="form-select" required>
+	        	      		<select name="funcao" class="form-select" required <?= ($_SESSION['papel'] == 'GERENTE' && $funcionario['fun_funcao'] == 'GERENTE')? 'readonly': '' ?>>
 	        	      		  <option selected>Selecione</option>
+	        	      		  <?php if ($_SESSION['papel'] != 'GERENTE' || $funcionario['fun_funcao'] != 'ATENDENTE') {  ?>
 	        	      		  <option <?php if ($funcionario['fun_funcao'] == 'GERENTE')  { ?>selected="true" <?php }; ?> value="gerente">Gerente</option>
+	        	      		  <?php } ?>
 	        	      		  <option <?php if ($funcionario['fun_funcao'] == 'ATENDENTE')  { ?>selected="true" <?php }; ?> value="atendente">Atendente</option>
 	        	      		</select>
 	        	    	</div>
 	        	    	<div class="form-group col-3">
 	        	      		<label>Celular</label>
 	        	      		<input type="number" class="form-control" name="celular" value="<?php echo $funcionario['fun_celular'] ?>" required>
-	        	    	</div>
-	        	    	<div class="form-group col-3">
-	        	      		<label>Senha</label>
-	        	      		<input type="password" class="form-control" name="senha" readonly>
 	        	    	</div>
         	    	</div>
         	    	<div class="d-flex justify-content-end">
