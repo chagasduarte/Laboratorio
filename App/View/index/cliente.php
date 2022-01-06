@@ -1,32 +1,42 @@
+		
+		<?php 
+
+			include_once('Controller/CarrosselController.php');
+			$carrossel_ctl = new CarrosselController();
+			$carrossel = $carrossel_ctl->showAll();
+
+		?>
+
 		<div id="carouselExampleCaptions" class="carousel slide mt-5 mb-5" data-bs-ride="carousel">
     		<div class="carousel-indicators">
-        		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    			<?php for ($i = 0; $i < $carrossel->num_rows; $i++) { ?>
+    				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?= $i ?>" class="<?= ($i == 0)? 'active': '' ?>"></button>
+    			<?php } ?>
     		</div>
     		<div class="carousel-container">
         		<div class="carousel-inner">
-            		<div class="carousel-item active">
-                		<img src="<?php echo $img ?>/carrossel1.jpg" class="img-fluid carousel-img" alt="">
+
+        			<?php
+        				$ct = 0;
+
+        				if ($carrossel->num_rows > 0) {
+        					while ($carrosel_itm = $carrossel->fetch_assoc()) {
+        			?>
+
+            		<div class="carousel-item <?= ($ct++ == 0)? 'active': '' ?>">
+                		<img src="<?= $uploads.'/Carrossel/'.$carrosel_itm['itm_img'] ?>" class="img-fluid carousel-img" alt="">
                 		<div class="carousel-caption">
-                    		<h5>First slide label</h5>
-                    		<p>Some representative placeholder content for the first slide.</p>
+                    		<h5><?= $carrosel_itm['itm_titulo'] ?></h5>
+                    		<p><?= $carrosel_itm['itm_descricao'] ?></p>
                 		</div>
             		</div>
-            		<div class="carousel-item">
-                		<img src="<?php echo $img ?>/carrossel2.jpg" class="img-fluid carousel-img" alt="">
-                		<div class="carousel-caption">
-                    		<h5>Second slide label</h5>
-                    		<p>Some representative placeholder content for the second slide.</p>
-                		</div>
-            		</div>
-            		<div class="carousel-item">
-                		<img src="<?php echo $img ?>/carrossel3.jpg" class="img-fluid carousel-img" alt="">
-                		<div class="carousel-caption">
-                    		<h5>Third slide label</h5>
-                    		<p>Some representative placeholder content for the third slide.</p>
-                		</div>
-            		</div>
+
+            		<?php 
+            				}
+
+            				$carrossel->free();
+            			}
+            		?>
         		</div>
     		</div>
 
